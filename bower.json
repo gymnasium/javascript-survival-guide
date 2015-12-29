@@ -1,0 +1,7 @@
+{
+    "name": "JavaScript Survival Guide - Part I",
+    "version": "0.0.0",
+    "dependencies": {
+        "jquery": "1.11.1"
+    }
+}

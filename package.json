@@ -1,0 +1,20 @@
+{
+  "name": "javascript-survival-guide-part-1",
+  "version": "1.0.0",
+  "description": "Code examples for the Aquent course: JavaScript & jQuery Survival Guide - Part I ",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gymnasium/javascript-survival-guide.git"
+  },
+  "author": "Kevin Chisholm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gymnasium/javascript-survival-guide/issues"
+  },
+  "homepage": "https://github.com/gymnasium/javascript-survival-guide",
+  "devDependencies": {
+    "bower-installer": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-webserver": "^0.9.1"
+  }
+}
