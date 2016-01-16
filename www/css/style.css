@@ -199,6 +199,7 @@ hr{
 }
 
 hr.top{
+  clear: both;
   margin-top: 40px;
 }
 
