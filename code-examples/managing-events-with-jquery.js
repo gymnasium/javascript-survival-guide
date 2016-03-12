@@ -1,17 +1,58 @@
 
 //--------------------------------------------------------------------------------
 
-$('li').click(function(){
-    alert('you clicked a list item');
+//Example # XX
+
+
+$('li');
+
+//--------------------------------------------------------------------------------
+
+//Example # XX
+
+
+$('li').click();
+
+
+//Example # XX B
+
+
+$('li').click(function () {
+  alert("hello");
+});
+
+
+//Example # XX C
+
+function sayHello () {
+  alert("hello");
+}
+
+$('li').click(sayHello);
+
+//--------------------------------------------------------------------------------
+
+//Example # XX
+
+$('li').click(function () {
+  console.dir(this);
 });
 
 //--------------------------------------------------------------------------------
 
-function clickEventHandler(){
-    alert('you clicked a list item');
-}
+//Example # XX
 
-$('li').click(clickEventHandler);
+$('li').click(function () {
+  console.log(this.innerHTML);
+});
+
+
+//--------------------------------------------------------------------------------
+//Example # XX
+
+$('li').click(function () {
+  console.log($(this).text());
+});
 
 //--------------------------------------------------------------------------------
 
