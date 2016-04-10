@@ -152,13 +152,14 @@ legend{
   cursor: pointer;
 }
 
-#feedbackForm .circle {
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
+.circle {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+
 }
 
-#feedbackForm .changeSize{
+.changeSize{
   position: absolute;
   bottom: -10px;
   font-weight: 700;
@@ -169,28 +170,32 @@ legend{
   line-height: 26px;
 }
 
-#feedbackForm .changeSize:hover{
+.changeSize:hover{
   cursor:pointer;
 }
 
-#feedbackForm .changeSize.decrease{
+.changeSize.decrease{
   left: -10px;
 }
 
-#feedbackForm .changeSize.increase{
+.changeSize.increase{
   right: -10px;
 }
 
-#feedbackForm .completed {
-  color: #ef8200;
+.strikeout {
+  border-radius: 5px;
+  background-color: #ccc;
+  color: #006600;
+  font-weight: 500;
   list-style-type: none;
 }
 
-#feedbackForm .completed:before{
+.strikeout:before{
   content: '✔';   
   margin-left: -18px;
   margin-right: 8px;
 }
+
 
 hr{
   height: 1px;
@@ -228,17 +233,18 @@ hr.bottom{
   cursor: pointer;
 }
 
+
 .hideImageMessage{
   position: absolute;
-  top: 40%;
-  width: 93%;
-  left: 0;
   padding: 4%;
+  background-color: rgba(255, 255, 255, 0.8);
+  top: 40%;
+  left: 0;
+  width: 93%;
   font-weight: bold;
   color: #555;
   font-size: 15px;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.8);
   -moz-transition:all 0.9s ease-in-out;
   -webkit-transition:all 0.9s ease-in-out;
   transition:all 0.9s ease-in-out;
@@ -248,3 +254,16 @@ hr.bottom{
 .hideImageMessage.isVisible{
   opacity: 1;
 }
+
+#restoreImage{
+  display: none;
+  float: right;
+  margin-bottom: 20px;
+  color: #ef8200;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#restoreImage:hover{
+  cursor: pointer;
+};
