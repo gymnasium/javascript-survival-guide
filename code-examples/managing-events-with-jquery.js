@@ -48,6 +48,7 @@ $('li').click(function () {
 
 
 //--------------------------------------------------------------------------------
+
 //Example # XX
 
 $('li').click(function () {
@@ -56,9 +57,31 @@ $('li').click(function () {
 
 //--------------------------------------------------------------------------------
 
+//Example # XX
+
+$('.imageContainter').dblclick(function(){
+    $(this).toggle();
+});
 
 //--------------------------------------------------------------------------------
 
+//Example # XX
+
+$('.imageContainter').dblclick();
+
+//--------------------------------------------------------------------------------
+
+//Example # XX
+
+$('.imageContainter').dblclick(function(){
+    $(this).toggle();
+    $('#restoreImage').show();
+});
+
+$('#restoreImage').click(function(){
+    $(this).hide();
+    $('.imageContainter').dblclick();
+});
 
 //--------------------------------------------------------------------------------
 
