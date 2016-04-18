@@ -85,6 +85,36 @@ $('#restoreImage').click(function(){
 
 //--------------------------------------------------------------------------------
 
+//Example # XX
+
+function bindTasks() {
+  $('.tasks li').click(function () {
+      $(this).addClass('strikeout');
+
+      $('#resetTasks').show();
+
+      $(this).unbind();
+
+      $(this).click(function () {
+        alert('You have already completed: ' + $(this).text());
+      });
+
+  });
+}
+
+
+$('#resetTasks').click(function () {  
+    $(this).hide();
+
+    $('.tasks li').unbind();
+
+    $('.tasks .strikeout').removeClass('strikeout');
+  
+    bindTasks();
+});
+
+bindTasks();
+
 
 //--------------------------------------------------------------------------------
 

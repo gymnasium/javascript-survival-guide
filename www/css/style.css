@@ -87,9 +87,11 @@ section{
   margin: 20px 0;
 }
 
-section:first-of-type{
+section:first-of-type, section.tasks.right{
   margin-top: 0;
 }
+
+
 
 #feedbackForm{
   margin: 20px 0 0;
@@ -255,15 +257,30 @@ hr.bottom{
   opacity: 1;
 }
 
-#restoreImage{
+#restoreImage, #resetTasks{
   display: none;
-  float: right;
   margin-bottom: 20px;
   color: #ef8200;
   font-size: 18px;
   font-weight: bold;
 }
 
-#restoreImage:hover{
+#restoreImage{
+  float: right;
+}
+
+.tasksContainer{
+  position: relative;
+}
+
+#resetTasks{
+  clear: both;
+  position: absolute;
+  right: 0;
+  top: -35px;
+  margin: 20px auto;
+}
+
+#restoreImage:hover, #resetTasks:hover{
   cursor: pointer;
 };
