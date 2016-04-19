@@ -257,7 +257,7 @@ hr.bottom{
   opacity: 1;
 }
 
-#restoreImage, #resetTasks{
+#restoreImage, #resetTasks, #showInfoHyperlinks, #hideInfoHyperlinks{
   display: none;
   margin-bottom: 20px;
   color: #ef8200;
@@ -265,8 +265,9 @@ hr.bottom{
   font-weight: bold;
 }
 
-#restoreImage{
+#restoreImage, #showInfoHyperlinks, #hideInfoHyperlinks{
   float: right;
+  margin-right: 20px;
 }
 
 .tasksContainer{
@@ -289,6 +290,8 @@ hr.bottom{
   margin: 20px auto;
 }
 
-#restoreImage:hover, #resetTasks:hover{
+#restoreImage:hover, #resetTasks:hover, #showInfoHyperlinks:hover, #hideInfoHyperlinks:hover{
   cursor: pointer;
 };
+
+

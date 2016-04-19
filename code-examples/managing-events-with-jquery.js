@@ -167,16 +167,57 @@ $('#resetTasks').click(function () {
 bindTasks();
 //--------------------------------------------------------------------------------
 
+//Example # XX
 
-//--------------------------------------------------------------------------------
-
-
-//--------------------------------------------------------------------------------
+$('.description a').unbind();
 
 
 //--------------------------------------------------------------------------------
 
+//Example # XX
 
+$('.description a').click(function (event) {
+    event.preventDefault();
+});
+//--------------------------------------------------------------------------------
+
+//Example # XX
+
+$('.description a').click(function (event) {
+    event.preventDefault();
+
+    alert('Did you know that ' + $(this).attr('data-info') + '?');
+});
+//--------------------------------------------------------------------------------
+//Example # XX
+
+function overrideHyperlinkClicks () {
+  $('.description a').click(function (event) {
+      event.preventDefault();
+
+      alert('Did you know that ' + $(this).attr('data-info') + '?');
+
+      $('#hideInfoHyperlinks').show();
+  });
+}
+
+$('#hideInfoHyperlinks').click(function () {
+    $(this).hide();
+
+    $('#showInfoHyperlinks').show();
+
+    $('.description a').unbind();
+});
+
+$('#showInfoHyperlinks').click(function () {
+    $(this).hide();
+
+    $('#hideInfoHyperlinks').show();
+
+    overrideHyperlinkClicks();
+});
+
+overrideHyperlinkClicks();
 //--------------------------------------------------------------------------------
 
 
