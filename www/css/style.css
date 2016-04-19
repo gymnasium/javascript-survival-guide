@@ -290,8 +290,14 @@ hr.bottom{
   margin: 20px auto;
 }
 
+#ajaxSpinner{
+  display: none;
+  margin: 28px 0 0 25px;
+}
+
 #restoreImage:hover, #resetTasks:hover, #showInfoHyperlinks:hover, #hideInfoHyperlinks:hover{
   cursor: pointer;
 };
+
 
 

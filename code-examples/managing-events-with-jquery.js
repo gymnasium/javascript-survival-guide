@@ -220,9 +220,36 @@ $('#showInfoHyperlinks').click(function () {
 overrideHyperlinkClicks();
 //--------------------------------------------------------------------------------
 
+//Example # XX
 
+$('#feedbackForm button[type="submit"]').click(function (event) {
+    event.preventDefault();
+
+    $(this).hide();
+
+    $('#ajaxSpinner').show();
+});
 //--------------------------------------------------------------------------------
 
+//Example # XX
+
+$('#feedbackForm button[type="submit"]').click(function (event) {
+    var $me = $(this);
+    
+     event.preventDefault();
+
+    $(this).hide();
+
+    $('#ajaxSpinner').show();
+  
+  setTimeout(function (){
+    
+    $('#ajaxSpinner').hide();
+    
+    $me.show();
+
+  }, 1000);
+});
 
 //--------------------------------------------------------------------------------
 
