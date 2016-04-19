@@ -88,37 +88,83 @@ $('#restoreImage').click(function(){
 //Example # XX
 
 function bindTasks() {
+  //for each task, when clicked...
   $('.tasks li').click(function () {
+
+      //add the CSS class that gives it a "completed" appearance
       $(this).addClass('strikeout');
 
-      $('#resetTasks').show();
-
-      $(this).unbind();
-
+      //add an event handler that reminds tha user that this task is already compoleted
       $(this).click(function () {
-        alert('You have already completed: ' + $(this).text());
+        alert('You have already completed the task: ' + $(this).text());
       });
-
   });
 }
 
-
-$('#resetTasks').click(function () {  
-    $(this).hide();
-
-    $('.tasks li').unbind();
-
-    $('.tasks .strikeout').removeClass('strikeout');
-  
-    bindTasks();
-});
-
+//add event handlers for each task
 bindTasks();
 
+//--------------------------------------------------------------------------------
+//Example # XX
+
+function bindTasks() {
+  //for each task, when clicked...
+  $('.tasks li').click(function () {
+
+      //add the CSS class that gives it a "completed" appearance
+      $(this).addClass('strikeout');
+
+      //un-bind any exising event handlers
+      $(this).unbind();
+
+      //add an event handler that reminds tha user that this task is already compoleted
+      $(this).click(function () {
+        alert('You have already completed the task: ' + $(this).text());
+      });
+  });
+}
+
+//add event handlers for each task
+bindTasks();
 
 //--------------------------------------------------------------------------------
 
+//Example # XX
 
+function bindTasks() {
+  //for each task, when clicked...
+  $('.tasks li').click(function () {
+
+      //add the CSS class that gives it a "completed" appearance
+      $(this).addClass('strikeout');
+
+      //un-bind any exising event handlers
+      $(this).unbind();
+
+      //add an event handler that reminds tha user that this task is already compoleted
+      $(this).click(function () {
+        alert('You have already completed the task: ' + $(this).text());
+      });
+  });
+}
+
+//when the user clicks the "Reset Tasks" link
+$('#resetTasks').click(function () {
+    //hide this element
+    $(this).hide();
+
+    //remove the CSS class that gives each task a "completed" appearance
+    $('.tasks .strikeout').removeClass('strikeout');
+
+    //un-bind any exising event handlers for each task
+    $('.tasks li').unbind();
+
+    //add new event handlers for each task
+    bindTasks();
+});
+
+//add event handlers for each task
+bindTasks();
 //--------------------------------------------------------------------------------
 
 
