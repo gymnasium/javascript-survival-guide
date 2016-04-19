@@ -273,11 +273,19 @@ hr.bottom{
   position: relative;
 }
 
+.tasksContainer h2{
+  margin-bottom: 20px;
+}
+
+.tasksContainer h3{
+  color: #555;
+}
+
 #resetTasks{
   clear: both;
   position: absolute;
   right: 0;
-  top: -35px;
+  top: -36px;
   margin: 20px auto;
 }
 
