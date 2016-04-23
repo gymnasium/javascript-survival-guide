@@ -226,6 +226,17 @@ overrideHyperlinkClicks();
 $('#feedbackForm button[type="submit"]').click(function (event) {
     //prevent default behavior
     event.preventDefault();
+});
+
+//--------------------------------------------------------------------------------
+
+
+//Example # XX
+
+//click handler for the submit button
+$('#feedbackForm button[type="submit"]').click(function (event) {
+    //prevent default behavior
+    event.preventDefault();
 
     //hide the submit button
     $(this).hide();
