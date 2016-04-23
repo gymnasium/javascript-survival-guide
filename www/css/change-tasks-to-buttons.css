@@ -1,0 +1,9 @@
+.tasks li{
+	color : #fff;
+	font-size : 25px;
+	font-family : Times;
+	background-color : #ef8200;
+	padding : 10px;
+	border-radius : 5px;
+	list-style-type : none;
+}
