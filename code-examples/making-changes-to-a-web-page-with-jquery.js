@@ -405,6 +405,28 @@ $('#restoreImage').click(function(){
 
 //Example # XX
 
+<script>
+    $('body').css({
+        'background-color' : 'yellow'
+    });
+</script>
+
+//--------------------------------------------------------------------------------
+
+//Example # XX
+
+<script>
+    $(document).ready(function(){
+        $('body').css({
+            'background-color' : 'yellow'
+        });
+    });
+</script>
+
+//--------------------------------------------------------------------------------
+
+//Example # XX
+
 $(document).ready(function(){
     $('.changeSize.decrease').click(function(){
         $('.hideImageMessage').addClass('isVisible');
