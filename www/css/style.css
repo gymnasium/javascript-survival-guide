@@ -29,11 +29,17 @@ header{
   border-top: 10px solid #ef8200;
 }
 
-header h1{
+header a{
+  text-decoration: none;
+}
+
+header a h1{
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 2px;
+  color: #fff;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .container {
