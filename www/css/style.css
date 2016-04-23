@@ -290,6 +290,10 @@ hr.bottom{
   margin: 20px auto;
 }
 
+#feedbackForm input[type=text].error, #feedbackForm  textarea.error{
+  outline: 2px solid #B80000;
+}
+
 #ajaxSpinner{
   display: none;
   margin: 28px 0 0 25px;
