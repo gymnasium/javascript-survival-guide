@@ -1,43 +1,46 @@
-//--------------------------------------------------------------------------------
+//CODE EXAMPLES: Making changes to a web page with jquery
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//make all list items red
 
 $('li').css('color', 'red');
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//make all list items 50px font size
 
 $('li').css('font-size', '50px');
 
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//decrease font size by 5px
 
 $('li').css('font-size', '-=5px');
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//change two CSS properties
 
 $('li').css('color', 'red');
 $('li').css('font-size', '50px');
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//use an object to change multiple CSS properties
 
+//change multiple CSS properties by passing an object
 $('li').css({
 	'color' : 'red',
 	'font-size' : '50px'
 });
+
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//change several CSS properties
 
+//change several CSS properties at once
 $('li').css({
 	'color' : '#fff',
 	'font-size' : '25px',
@@ -50,8 +53,10 @@ $('li').css({
 });
 
 //--------------------------------------------------------------------------------
-//Example # XX
 
+//define an object, and then pass it to the css method
+
+//create the properties object first
 var cssProperties = {
 	'color' : '#fff',
 	'font-size' : '25px',
@@ -62,16 +67,18 @@ var cssProperties = {
 	'list-style-type' : 'none'
 }
 
+//and then pass that object to the jQuery css method
 $('li').css(cssProperties);
+
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//create a stylesheet dynamically
 
 jQuery('<link rel="stylesheet" href="css/change-tasks-to-buttons.css"/>').appendTo('body');
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//add attributes one at a time
 
 jQuery('<link />')
 	.attr('rel', 'stylesheet')
@@ -81,7 +88,7 @@ jQuery('<link />')
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//add an embedded stylesheet dynamically
 
 var cssText = '.tasks li{color:#fff;font-size:25px;font-family:Times;background-color:#ef8200;padding:10px;border-radius:5px;list-style-type:none}';
 
@@ -89,7 +96,7 @@ jQuery('<style>' + cssText + '</style>').appendTo('body');
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//make embedded stylesheet code more expressive
 
 var cssText = '.tasks li{color:#fff;font-size:25px;font-family:Times;background-color:#ef8200;padding:10px;border-radius:5px;list-style-type:none}';
 
@@ -97,38 +104,39 @@ jQuery('<style />').text(cssText).appendTo('body');
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//create a new header element
 
 var $newHeader = $('<h1>This is a new header</h1>');
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//inject the new header into the body
 
 var $newHeader = $('<h1>This is a new header</h1>');
 
 $newHeader.prependTo('body');
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//make new header injecttion code more expressive
 
 $('<h1>This is a new header</h1>').prependTo('body');
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//inject a new image into the page
 
 $('<img src="images/energy-bars.jpg">').prependTo('body');
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//add a buttton
 
 $('<button id="changeTasks ">Change Tasks to Buttons</button>')
 	.appendTo('.tasksContainer');
 
 //--------------------------------------------------------------------------------
-//Example # XX
+
+//add a buttton with custom styling
 
 $('<button id="changeTasks ">Change Tasks to Buttons</button>')
 	.css({
@@ -142,8 +150,10 @@ $('<button id="changeTasks ">Change Tasks to Buttons</button>')
 	.appendTo('.tasksContainer');
 
 //--------------------------------------------------------------------------------
-//Example # XX
 
+//allow the user to add a new ingredient
+
+//create the CSS needed
 var cssProperties = {
 	'position' : 'absolute',
 	'top' : '0',
@@ -153,19 +163,30 @@ var cssProperties = {
 	'width' : '200px'
 }
 
+//create the add new ingredient button
 $('<button>Add new ingredient</button>')
+    //add the css we created earlier
 	.css(cssProperties)
+    //add a click event handler
 	.click(function () {
+        //prompt the user to create a new ingredient
 		var newIngredientText = prompt('Add a new ingredient');
 
-		$('.tasks.ingredients').append($('<li>' + newIngredientText +  '</li>'))
+        //if the user created a new ingredient
+        if (newIngredientText) {
+            //add that new ingredient to the list of ingredients
+            $('.tasks.ingredients').append($('<li>' + newIngredientText +  '</li>'));
+        }
+		
 	})
+    //inject the new add new ingredient button into the page
 	.appendTo('.tasksContainer');
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//allow the user to add a new ingredient or preparation step
 
+//create the CSS needed
 var cssProperties = {
 	'position' : 'absolute',
 	'top' : '0',
@@ -175,30 +196,47 @@ var cssProperties = {
 	'width' : '200px'
 }
 
+//create the add new ingredient button
 $('<button>Add new ingredient</button>')
+    //add the css we created earlier
 	.css(cssProperties)
+    //add a click event handler
 	.click(function () {
+        //prompt the user to create a new ingredient
 		var newIngredientText = prompt('Add a new ingredient');
 
-		$('.tasks.ingredients').append($('<li>' + newIngredientText +  '</li>'))
+        //if the user created a new ingredient
+        if (newIngredientText) {
+            //add that new ingredient to the list of ingredients
+            $('.tasks.ingredients').append($('<li>' + newIngredientText +  '</li>'));
+        }
 	})
+    //inject the new add new ingredient button into the page
 	.appendTo('.tasksContainer');
 
+//create the add new preparation step button
 $('<button>Add new preparation step</button>')
 	.css(cssProperties)
 	.css({
 		'top' : '30px'
 	})
 	.click(function () {
+        //prompt the user to create a new preparation step
 		var newPreparationStepText = prompt('Add a new preparation step');
 
-		$('.tasks.preparation').append($('<li>' + newPreparationStepText +  '</li>'))
+        //if the user created a new preparation step
+        if (newPreparationStepText) {
+            //add that new preparation step to the list of preparation steps
+            $('.tasks.preparation').append($('<li>' + newPreparationStepText +  '</li>'));
+        }
 	})
+    //inject the new add new preparation step button into the page
 	.appendTo('.tasksContainer');
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//create a large block of HTML
 
+//create the HTML string
 var nutritionInfoHtml = ''
 	+ '<h3>Nutritional Information</h3>'
 	+ '<div>'
@@ -211,59 +249,67 @@ var nutritionInfoHtml = ''
 		+ '</ul>'
 	+ '</div>';
 
-
+//inject the new HTML
 $('.tasks.left').append(nutritionInfoHtml);
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//remove an element
 
 $('li').remove();
 
 //--------------------------------------------------------------------------------
-//Example # XX
+
+//remove list items one-by-one
 
 $('li')[0].remove();
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//remove list item on click
 
+//when a list item is clicked
 $('li').click(function () {
+    //remove the clicked item
 	$(this).remove();
 });
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//slide the image container down 500px
 
+//modify the CSS of the image containter
 $('.imageContainter').css({
   'position' : 'relative',
   'top' : '0',
   'transition' : 'all 0.9s ease-in-out 0s'
 });
 
+//wait 1/4 scond so that the CSS changes are complete
 setTimeout(function () {
-  $('.imageContainter').css({
-      'top' : '500px'
-  });
+    //change the CSS so that the animation kicks-in
+    $('.imageContainter').css({
+        'top' : '500px'
+    });
 }, 250);
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//change the image container width
 
+//set the CSS trasition property
 $('.imageContainter').css({
   'transition' : 'all 0.9s ease-in-out 0s'
 });
 
+//change the CSS so that the animation kicks-in
 $('.imageContainter').css({
   'width' : '100px'
 });
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//animation with jQuery's animate method
 
 $('.imageContainter').animate({
     'right' : '-=300px'
@@ -271,7 +317,7 @@ $('.imageContainter').animate({
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//multiple animations
 
 $('.imageContainter').animate({
     'left' : '+=300px',
@@ -280,33 +326,28 @@ $('.imageContainter').animate({
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//set the animation duration
 
 $('.imageContainter').animate({
     'left' : '+=300px',
     'top' : '+=500px'
 }, 1000);
 
-
-//Example # XX
-
-$('.imageContainter').animate({
-    'left' : '+=300px',
-    'top' : '+=500px'
-}, 3000);
-
-
 //--------------------------------------------------------------------------------
-//Example # XX
+
+//add a compoletion callback
 
 $('.imageContainter').animate({
     'left' : '+=300px',
     'top' : '+=500px'
 }, 3000, function () {
+    //this alert should only happen after the animation has completed
 	alert('Done!');
 });
 
 //--------------------------------------------------------------------------------
+
+//add a visual queue in the compoletion callback
 
 var $imageContainter = $('.imageContainter');
 
@@ -314,6 +355,7 @@ $imageContainter.animate({
     'left' : '+=300px',
     'top' : '+=300px'
 }, 3000, function () {
+    //this visual cue should only happen after the animation has completed
 	$imageContainter.css({
 		'outline' : '10px solid red'
 	});
@@ -322,90 +364,151 @@ $imageContainter.animate({
 //--------------------------------------------------------------------------------
 
 
-//Example # XX
+//decrease the image containter size on click
 
-$('.changeSize.decrease').click(function(){
-    $('.hideImageMessage').addClass('isVisible');
+//when the decrease button is clicked
+$('.changeSize.decrease').click(function () {
 
+    //animate the mage containter, decreasing size
     $('.imageContainter').animate({
         'width' : '-=30px',
         'overflow' : 'visible'
-    }, 800, function(){
-        $('.hideImageMessage').removeClass('isVisible');
-    });
+    }, 800);
 });
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//add a hide image message
 
-$('.changeSize.increase').click(function(){
+//when the decrease button is clicked
+$('.changeSize.decrease').click(function () {
+    //show the hide image message
     $('.hideImageMessage').addClass('isVisible');
 
+    //animate the mage containter, decreasing size
+    $('.imageContainter').animate({
+        'width' : '-=30px',
+        'overflow' : 'visible'
+    }, 800);
+});
+
+//--------------------------------------------------------------------------------
+
+//hide the hide image message after the animation completes
+
+//when the decrease button is clicked
+$('.changeSize.decrease').click(function () {
+    //show the hide image message
+    $('.hideImageMessage').addClass('isVisible');
+
+    //animate the mage containter, decreasing size
+    $('.imageContainter').animate({
+        'width' : '-=30px',
+        'overflow' : 'visible'
+    }, 800, function () {
+        //fade-out the hide image message after 800ms
+        $('.hideImageMessage').removeClass('isVisible');
+    })
+});
+
+//--------------------------------------------------------------------------------
+
+//increase the image containter size on click
+
+//when the increase button is clicked
+$('.changeSize.increase').click(function () {
+    //fade-in the hide image message 
+    $('.hideImageMessage').addClass('isVisible');
+
+    //animate the mage containter, decreasing size
     $('.imageContainter').animate({
         'width' : '+=30px',
         'overflow' : 'visible'
-    }, 800, function(){
+    }, 800, function () {
+        //fade-out the hide image message after 800ms
         $('.hideImageMessage').removeClass('isVisible');
     });
 });
 
-
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//add the ability to show/hide the main image
 
-$('.imageContainter').dblclick(function(){
+//when the image containter is bouble-clicked
+$('.imageContainter').dblclick(function () {
+    //hide the image containter 
     $(this).toggle();
-  $('#restoreImage').toggle();
+
+    //show the restore image link
+    $('#restoreImage').toggle();
 });
 
-$('#restoreImage').click(function(){
+//when the restore image link is clicked
+$('#restoreImage').click(function () {
+    //hide the restore image link
     $(this).toggle();
+
+    //show the image containter
     $('.imageContainter').toggle();
 });
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//full working example for main image animation
 
-$('.changeSize.decrease').click(function(){
+//when the decrease button is clicked
+$('.changeSize.decrease').click(function () {
+    //fade-in the hide image message 
     $('.hideImageMessage').addClass('isVisible');
 
+    //animate the mage containter, decreasing size
     $('.imageContainter').animate({
         'width' : '-=30px',
         'overflow' : 'visible'
-    }, 800, function(){
+    }, 800, function () {
+        //fade-out the hide image message after 800ms
         $('.hideImageMessage').removeClass('isVisible');
     });
 });
 
-$('.changeSize.increase').click(function(){
+//when the increase button is clicked
+$('.changeSize.increase').click(function () {
+    //fade-in the hide image message 
     $('.hideImageMessage').addClass('isVisible');
 
+    //animate the mage containter, increasing size
     $('.imageContainter').animate({
         'width' : '+=30px',
         'overflow' : 'visible'
     }, 800, function(){
+        //fade-out the hide image message after 800ms
         $('.hideImageMessage').removeClass('isVisible');
     });
 });
 
-$('.imageContainter').dblclick(function(){
+//when the image containter is bouble-clicked
+$('.imageContainter').dblclick(function () {
+    //hide the image container
     $(this).toggle();
+
+    //show the restore image link
   $('#restoreImage').toggle();
 });
 
-
-$('#restoreImage').click(function(){
+//when the restore image link is clicked
+$('#restoreImage').click(function () {
+    //hide the restore image link
     $(this).toggle();
+
+    //show the image containter
     $('.imageContainter').toggle();
 });
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//change the background color to yellow
 
 <script>
+    //make the entire page background yellow
     $('body').css({
         'background-color' : 'yellow'
     });
@@ -413,10 +516,11 @@ $('#restoreImage').click(function(){
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//wait until the document is ready
 
 <script>
-    $(document).ready(function(){
+    //wait until the document is ready
+    $(document).ready(function () {
         $('body').css({
             'background-color' : 'yellow'
         });
@@ -425,10 +529,10 @@ $('#restoreImage').click(function(){
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//use document is ready for the main image animation
 
-$(document).ready(function(){
-    $('.changeSize.decrease').click(function(){
+$(document).ready(function () {
+    $('.changeSize.decrease').click(function () {
         $('.hideImageMessage').addClass('isVisible');
 
         $('.imageContainter').animate({
@@ -439,7 +543,7 @@ $(document).ready(function(){
         });
     });
 
-    $('.changeSize.increase').click(function(){
+    $('.changeSize.increase').click(function () {
         $('.hideImageMessage').addClass('isVisible');
 
         $('.imageContainter').animate({
@@ -450,40 +554,17 @@ $(document).ready(function(){
         });
     });
 
-    $('.imageContainter').dblclick(function(){
+    $('.imageContainter').dblclick(function () {
         $(this).toggle();
       $('#restoreImage').toggle();
     });
 
 
-    $('#restoreImage').click(function(){
+    $('#restoreImage').click(function () {
         $(this).toggle();
         $('.imageContainter').toggle();
     });
 });
-//--------------------------------------------------------------------------------
-
-//--------------------------------------------------------------------------------
-
-//--------------------------------------------------------------------------------
-
-//--------------------------------------------------------------------------------
-
-//--------------------------------------------------------------------------------
-
-//--------------------------------------------------------------------------------
-
-//--------------------------------------------------------------------------------
-
-//--------------------------------------------------------------------------------
-
-//--------------------------------------------------------------------------------
-
-//--------------------------------------------------------------------------------
-
-//--------------------------------------------------------------------------------
-
-//--------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------
 
