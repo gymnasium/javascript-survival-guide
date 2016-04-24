@@ -1,28 +1,30 @@
+//CODE EXAMPLES: Managing events with jquery
+
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//query all list items
 
 
 $('li');
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//query all list items, show click method
 
+$('li').click;
 
-$('li').click();
+//--------------------------------------------------------------------------------
 
-
-//Example # XX B
-
+//alert hello on click
 
 $('li').click(function () {
   alert("hello");
 });
 
+//--------------------------------------------------------------------------------
 
-//Example # XX C
+//pass named function to cick callback
 
 function sayHello () {
   alert("hello");
@@ -32,7 +34,7 @@ $('li').click(sayHello);
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//inspect clicked element
 
 $('li').click(function () {
   console.dir(this);
@@ -40,16 +42,15 @@ $('li').click(function () {
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//view innerHTML of clicked element
 
 $('li').click(function () {
   console.log(this.innerHTML);
 });
 
-
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//execute text method on clicked element
 
 $('li').click(function () {
   console.log($(this).text());
@@ -57,7 +58,7 @@ $('li').click(function () {
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//toggle image container on double click
 
 $('.imageContainter').dblclick(function(){
     $(this).toggle();
@@ -65,27 +66,33 @@ $('.imageContainter').dblclick(function(){
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//manually trigger double click on image container
 
 $('.imageContainter').dblclick();
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//hide / show image container example
 
 $('.imageContainter').dblclick(function(){
+    //show/hide this
     $(this).toggle();
+
+    //show the restorm image link
     $('#restoreImage').show();
 });
 
 $('#restoreImage').click(function(){
+    //show/hide this
     $(this).hide();
+
+    //show the image containter
     $('.imageContainter').dblclick();
 });
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//marked tasks as completed on click
 
 function bindTasks() {
   //for each task, when clicked...
@@ -105,7 +112,8 @@ function bindTasks() {
 bindTasks();
 
 //--------------------------------------------------------------------------------
-//Example # XX
+
+//marked tasks as completed on click, with unbind
 
 function bindTasks() {
   //for each task, when clicked...
@@ -129,7 +137,7 @@ bindTasks();
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//add reset-tasks link
 
 function bindTasks() {
   //for each task, when clicked...
@@ -140,6 +148,9 @@ function bindTasks() {
 
       //un-bind any exising event handlers
       $(this).unbind();
+
+      //show the reset tasks link
+      $('#resetTasks').show();
 
       //add an event handler that reminds tha user that this task is already compoleted
       $(this).click(function () {
@@ -165,64 +176,154 @@ $('#resetTasks').click(function () {
 
 //add event handlers for each task
 bindTasks();
+
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//attempt to un-bind anchor tags
 
 $('.description a').unbind();
 
 
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//prevent default behavior of anchor tags
 
+//when any of the description hyperlinks are clicked
 $('.description a').click(function (event) {
+    //prevent the anchor link's default behavior
     event.preventDefault();
 });
+
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//view href attribute
 
+//when any of the description hyperlinks are clicked
 $('.description a').click(function (event) {
+    //prevent the anchor link's default behavior
     event.preventDefault();
 
+    //show that we have access to information about this hyerlink
+    console.log('The link to: ' +  $(this).attr('href') + ' was disabled!');
+});
+
+//--------------------------------------------------------------------------------
+
+//show link info in alert
+
+  //when any of the description hyperlinks are clicked
+$('.description a').click(function (event) {
+    //prevent the anchor link's default behavior
+    event.preventDefault();
+
+    //show the user this link's info
     alert('Did you know that ' + $(this).attr('data-info') + '?');
 });
+
 //--------------------------------------------------------------------------------
-//Example # XX
+//enable show/hide iinfo for hyperlinks
 
 function overrideHyperlinkClicks () {
+  //when any of the description hyperlinks are clicked
   $('.description a').click(function (event) {
+      //prevent the anchor link's default behavior
       event.preventDefault();
 
+      //alert the link info
       alert('Did you know that ' + $(this).attr('data-info') + '?');
 
+      //show the hide info for hyperlinks link
       $('#hideInfoHyperlinks').show();
   });
 }
 
+//when the hide info for hyperlinks link is clicked
 $('#hideInfoHyperlinks').click(function () {
+    //hide the hide info for hyperlinks link
     $(this).hide();
 
+    //show the show info for hyperlinks link
     $('#showInfoHyperlinks').show();
 
+    //un-bind all of our event handlers for the hyoerlinks
     $('.description a').unbind();
 });
 
+//when the show info for hyperlinks link is clicked
 $('#showInfoHyperlinks').click(function () {
+    //hide the show info for hyperlinks link
     $(this).hide();
 
+    //show the hide info for hyperlinks link
     $('#hideInfoHyperlinks').show();
 
+    //add event handlers that prevent the anchor link's default behavior
     overrideHyperlinkClicks();
 });
 
+//add event handlers that prevent the anchor link's default behavior
 overrideHyperlinkClicks();
+
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//allow the user to follow the hyperkink if desired
 
-//click handler for the submit button
+function overrideHyperlinkClicks () {
+  //when any of the description hyperlinks are clicked
+  $('.description a').click(function (event) {
+      //prevent the anchor link's default behavior
+      event.preventDefault();
+
+      //build the text for the confirm pop-up
+      var messageInfo = 'Did you know that ' + $(this).attr('data-info') + '?',
+        messageQuestion = ' \n\nClick "OK" to search Google for: ' + $(this).text() +  '.',
+        //execute the confirm pop-up, using the text we put together
+        moreInfo = confirm(messageInfo + messageQuestion);
+
+      //if the user clicked "ok"
+      if (moreInfo) {
+        //open a new window, using the anchor link's href attribute for the URL
+        window.open($(this).attr('href'));
+      }
+
+      //show the hide info for hyperlinks link
+      $('#hideInfoHyperlinks').show();
+  });
+}
+
+//when the hide info for hyperlinks link is clicked
+$('#hideInfoHyperlinks').click(function () {
+    //hide the hide info for hyperlinks link
+    $(this).hide();
+
+    //show the show info for hyperlinks link
+    $('#showInfoHyperlinks').show();
+
+    //un-bind all of our event handlers for the hyoerlinks
+    $('.description a').unbind();
+});
+
+//when the show info for hyperlinks link is clicked
+$('#showInfoHyperlinks').click(function () {
+    //hide the show info for hyperlinks link
+    $(this).hide();
+
+    //show the hide info for hyperlinks link
+    $('#hideInfoHyperlinks').show();
+
+    //add event handlers that prevent the anchor link's default behavior
+    overrideHyperlinkClicks();
+});
+
+//add event handlers that prevent the anchor link's default behavior
+overrideHyperlinkClicks();
+
+
+//--------------------------------------------------------------------------------
+
+//prevent the form's default submit behavior
+
+//when the submit button is clicked
 $('#feedbackForm button[type="submit"]').click(function (event) {
     //prevent default behavior
     event.preventDefault();
@@ -231,9 +332,9 @@ $('#feedbackForm button[type="submit"]').click(function (event) {
 //--------------------------------------------------------------------------------
 
 
-//Example # XX
+//hide submit button, show ajax spinner
 
-//click handler for the submit button
+//when the submit button is clicked
 $('#feedbackForm button[type="submit"]').click(function (event) {
     //prevent default behavior
     event.preventDefault();
@@ -244,11 +345,12 @@ $('#feedbackForm button[type="submit"]').click(function (event) {
     //show the ajax spinner
     $('#ajaxSpinner').show();
 });
+
 //--------------------------------------------------------------------------------
 
-//Example # XX
+//add controls reset
 
-//click handler for the submit button
+//when the submit button is clicked
 $('#feedbackForm button[type="submit"]').click(function (event) {
     //cache a reference to the element that was clicked
     var $me = $(this);
@@ -276,7 +378,7 @@ $('#feedbackForm button[type="submit"]').click(function (event) {
 //--------------------------------------------------------------------------------
 
 
-//Example # XX
+//mimic an AJAX form submission
 
 //empties all form fields
 function clearForm() {
@@ -321,7 +423,7 @@ function formValid() {
   return true;
 }
 
-//click handler for the submit button
+//when the submit button is clicked
 $('#feedbackForm button[type="submit"]').click(function (event) {
   //cache a reference to the element that was clicked
   var $me = $(this);
@@ -360,19 +462,11 @@ $('#feedbackForm button[type="submit"]').click(function (event) {
     clearForm();
 
     //inform the user that thier comments have been submitted
-    alert('Your comments have been submitted. Thank you!');
+    alert('Your comments have been submitted. \n\nThank you!');
   }, 1000);
 });
 
 //ensure that all fields are empty on page load
 clearForm();
-//--------------------------------------------------------------------------------
-
-
-//--------------------------------------------------------------------------------
-
-
-//--------------------------------------------------------------------------------
-
 
 //--------------------------------------------------------------------------------
