@@ -89,7 +89,7 @@ $('#restoreImage').click(function(){
 
 //--------------------------------------------------------------------------------
 
-//marked tasks as completed on click
+//mark tasks as completed on click
 
 function bindTasks() {
   //for each task, when clicked...
@@ -110,7 +110,7 @@ bindTasks();
 
 //--------------------------------------------------------------------------------
 
-//marked tasks as completed on click, with unbind
+//mark tasks as completed on click, with unbind
 
 function bindTasks() {
   //for each task, when clicked...
