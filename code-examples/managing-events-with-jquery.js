@@ -79,13 +79,10 @@ $('.imageContainter').dblclick(function(){
     $(this).toggle();
 
     //show the restorm image link
-    $('#restoreImage').show();
+    $('#restoreImage').toggle();
 });
 
 $('#restoreImage').click(function(){
-    //show/hide this
-    $(this).hide();
-
     //show the image containter
     $('.imageContainter').dblclick();
 });
