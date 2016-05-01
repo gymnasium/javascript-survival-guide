@@ -292,7 +292,7 @@ hr.bottom{
   clear: both;
   position: absolute;
   right: 0;
-  top: -36px;
+  bottom: -36px;
   margin: 20px auto;
 }
 
