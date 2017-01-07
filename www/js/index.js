@@ -5,7 +5,7 @@
 $(document).ready(function () {
 
 	//CHAPTER 2 - hide / show image container example
-    $('.imageContainter').dblclick(function () {
+    $('.imageContainer').dblclick(function () {
         $(this).toggle();
       $('#restoreImage').toggle();
     });
@@ -13,14 +13,14 @@ $(document).ready(function () {
 
     $('#restoreImage').click(function () {
         $(this).toggle();
-        $('.imageContainter').toggle();
+        $('.imageContainer').toggle();
     });
 
 	//CHAPTER 3 - main image animation
     $('.changeSize.decrease').click(function () {
         $('.hideImageMessage').addClass('isVisible');
 
-        $('.imageContainter').animate({
+        $('.imageContainer').animate({
             'width' : '-=30px',
             'overflow' : 'visible'
         }, 800, function(){
@@ -31,7 +31,7 @@ $(document).ready(function () {
     $('.changeSize.increase').click(function () {
         $('.hideImageMessage').addClass('isVisible');
 
-        $('.imageContainter').animate({
+        $('.imageContainer').animate({
             'width' : '+=30px',
             'overflow' : 'visible'
         }, 800, function(){

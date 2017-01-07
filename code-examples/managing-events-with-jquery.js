@@ -60,7 +60,7 @@ $('li').click(function () {
 
 //toggle image container on double click
 
-$('.imageContainter').dblclick(function(){
+$('.imageContainer').dblclick(function(){
     $(this).toggle();
 });
 
@@ -68,13 +68,13 @@ $('.imageContainter').dblclick(function(){
 
 //manually trigger double click on image container
 
-$('.imageContainter').dblclick();
+$('.imageContainer').dblclick();
 
 //--------------------------------------------------------------------------------
 
 //hide / show image container example
 
-$('.imageContainter').dblclick(function(){
+$('.imageContainer').dblclick(function(){
     //show/hide this
     $(this).toggle();
 
@@ -83,8 +83,8 @@ $('.imageContainter').dblclick(function(){
 });
 
 $('#restoreImage').click(function(){
-    //show the image containter
-    $('.imageContainter').dblclick();
+    //show the image container
+    $('.imageContainer').dblclick();
 });
 
 //--------------------------------------------------------------------------------
