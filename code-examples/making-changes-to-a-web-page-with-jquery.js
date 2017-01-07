@@ -278,8 +278,8 @@ $('li').click(function () {
 
 //slide the image container down 500px
 
-//modify the CSS of the image containter
-$('.imageContainter').css({
+//modify the CSS of the image container
+$('.imageContainer').css({
   'position' : 'relative',
   'top' : '0',
   'transition' : 'all 0.9s ease-in-out 0s'
@@ -288,7 +288,7 @@ $('.imageContainter').css({
 //wait 1/4 scond so that the CSS changes are complete
 setTimeout(function () {
     //change the CSS so that the animation kicks-in
-    $('.imageContainter').css({
+    $('.imageContainer').css({
         'top' : '500px'
     });
 }, 250);
@@ -298,12 +298,12 @@ setTimeout(function () {
 //change the image container width
 
 //set the CSS trasition property
-$('.imageContainter').css({
+$('.imageContainer').css({
   'transition' : 'all 0.9s ease-in-out 0s'
 });
 
 //change the CSS so that the animation kicks-in
-$('.imageContainter').css({
+$('.imageContainer').css({
   'width' : '100px'
 });
 
@@ -311,7 +311,7 @@ $('.imageContainter').css({
 
 //animation with jQuery's animate method
 
-$('.imageContainter').animate({
+$('.imageContainer').animate({
     'right' : '-=300px'
 });
 
@@ -319,7 +319,7 @@ $('.imageContainter').animate({
 
 //multiple animations
 
-$('.imageContainter').animate({
+$('.imageContainer').animate({
     'left' : '+=300px',
     'top' : '+=300px'
 });
@@ -328,7 +328,7 @@ $('.imageContainter').animate({
 
 //set the animation duration
 
-$('.imageContainter').animate({
+$('.imageContainer').animate({
     'left' : '+=300px',
     'top' : '+=500px'
 }, 1000);
@@ -337,7 +337,7 @@ $('.imageContainter').animate({
 
 //add a compoletion callback
 
-$('.imageContainter').animate({
+$('.imageContainer').animate({
     'left' : '+=300px',
     'top' : '+=500px'
 }, 3000, function () {
@@ -349,14 +349,14 @@ $('.imageContainter').animate({
 
 //add a visual queue in the compoletion callback
 
-var $imageContainter = $('.imageContainter');
+var $imageContainer = $('.imageContainer');
 
-$imageContainter.animate({
+$imageContainer.animate({
     'left' : '+=300px',
     'top' : '+=300px'
 }, 3000, function () {
     //this visual cue should only happen after the animation has completed
-	$imageContainter.css({
+	$imageContainer.css({
 		'outline' : '10px solid red'
 	});
 });
@@ -364,13 +364,13 @@ $imageContainter.animate({
 //--------------------------------------------------------------------------------
 
 
-//decrease the image containter size on click
+//decrease the image container size on click
 
 //when the decrease button is clicked
 $('.changeSize.decrease').click(function () {
 
-    //animate the mage containter, decreasing size
-    $('.imageContainter').animate({
+    //animate the mage container, decreasing size
+    $('.imageContainer').animate({
         'width' : '-=30px',
         'overflow' : 'visible'
     }, 800);
@@ -385,8 +385,8 @@ $('.changeSize.decrease').click(function () {
     //show the hide image message
     $('.hideImageMessage').addClass('isVisible');
 
-    //animate the mage containter, decreasing size
-    $('.imageContainter').animate({
+    //animate the mage container, decreasing size
+    $('.imageContainer').animate({
         'width' : '-=30px',
         'overflow' : 'visible'
     }, 800);
@@ -401,8 +401,8 @@ $('.changeSize.decrease').click(function () {
     //show the hide image message
     $('.hideImageMessage').addClass('isVisible');
 
-    //animate the mage containter, decreasing size
-    $('.imageContainter').animate({
+    //animate the mage container, decreasing size
+    $('.imageContainer').animate({
         'width' : '-=30px',
         'overflow' : 'visible'
     }, 800, function () {
@@ -413,15 +413,15 @@ $('.changeSize.decrease').click(function () {
 
 //--------------------------------------------------------------------------------
 
-//increase the image containter size on click
+//increase the image container size on click
 
 //when the increase button is clicked
 $('.changeSize.increase').click(function () {
     //fade-in the hide image message 
     $('.hideImageMessage').addClass('isVisible');
 
-    //animate the mage containter, decreasing size
-    $('.imageContainter').animate({
+    //animate the mage container, decreasing size
+    $('.imageContainer').animate({
         'width' : '+=30px',
         'overflow' : 'visible'
     }, 800, function () {
@@ -434,9 +434,9 @@ $('.changeSize.increase').click(function () {
 
 //add the ability to show/hide the main image
 
-//when the image containter is bouble-clicked
-$('.imageContainter').dblclick(function () {
-    //hide the image containter 
+//when the image container is bouble-clicked
+$('.imageContainer').dblclick(function () {
+    //hide the image container 
     $(this).toggle();
 
     //show the restore image link
@@ -448,8 +448,8 @@ $('#restoreImage').click(function () {
     //hide the restore image link
     $(this).toggle();
 
-    //show the image containter
-    $('.imageContainter').toggle();
+    //show the image container
+    $('.imageContainer').toggle();
 });
 //--------------------------------------------------------------------------------
 
@@ -460,8 +460,8 @@ $('.changeSize.decrease').click(function () {
     //fade-in the hide image message 
     $('.hideImageMessage').addClass('isVisible');
 
-    //animate the mage containter, decreasing size
-    $('.imageContainter').animate({
+    //animate the mage container, decreasing size
+    $('.imageContainer').animate({
         'width' : '-=30px',
         'overflow' : 'visible'
     }, 800, function () {
@@ -475,8 +475,8 @@ $('.changeSize.increase').click(function () {
     //fade-in the hide image message 
     $('.hideImageMessage').addClass('isVisible');
 
-    //animate the mage containter, increasing size
-    $('.imageContainter').animate({
+    //animate the mage container, increasing size
+    $('.imageContainer').animate({
         'width' : '+=30px',
         'overflow' : 'visible'
     }, 800, function(){
@@ -485,8 +485,8 @@ $('.changeSize.increase').click(function () {
     });
 });
 
-//when the image containter is bouble-clicked
-$('.imageContainter').dblclick(function () {
+//when the image container is bouble-clicked
+$('.imageContainer').dblclick(function () {
     //hide the image container
     $(this).toggle();
 
@@ -499,8 +499,8 @@ $('#restoreImage').click(function () {
     //hide the restore image link
     $(this).toggle();
 
-    //show the image containter
-    $('.imageContainter').toggle();
+    //show the image container
+    $('.imageContainer').toggle();
 });
 
 //--------------------------------------------------------------------------------
@@ -535,7 +535,7 @@ $(document).ready(function () {
     $('.changeSize.decrease').click(function () {
         $('.hideImageMessage').addClass('isVisible');
 
-        $('.imageContainter').animate({
+        $('.imageContainer').animate({
             'width' : '-=30px',
             'overflow' : 'visible'
         }, 800, function(){
@@ -546,7 +546,7 @@ $(document).ready(function () {
     $('.changeSize.increase').click(function () {
         $('.hideImageMessage').addClass('isVisible');
 
-        $('.imageContainter').animate({
+        $('.imageContainer').animate({
             'width' : '+=30px',
             'overflow' : 'visible'
         }, 800, function(){
@@ -554,7 +554,7 @@ $(document).ready(function () {
         });
     });
 
-    $('.imageContainter').dblclick(function () {
+    $('.imageContainer').dblclick(function () {
         $(this).toggle();
       $('#restoreImage').toggle();
     });
@@ -562,7 +562,7 @@ $(document).ready(function () {
 
     $('#restoreImage').click(function () {
         $(this).toggle();
-        $('.imageContainter').toggle();
+        $('.imageContainer').toggle();
     });
 });
 

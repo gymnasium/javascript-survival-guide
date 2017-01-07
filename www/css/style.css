@@ -67,13 +67,13 @@ header a h1{
   padding: 5% 5% 0;
 }
 
-.imageContainter {
+.imageContainer {
   position: relative;
   width: 30%;
   overflow: visible!important;
 }
 
-.imageContainter img {
+.imageContainer img {
   width: 100%;
   border: 1px solid #ef8200;
 }
