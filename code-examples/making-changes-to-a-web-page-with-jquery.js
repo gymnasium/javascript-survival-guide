@@ -297,7 +297,7 @@ setTimeout(function () {
 
 //change the image container width
 
-//set the CSS trasition property
+//set the CSS transition property
 $('.imageContainer').css({
   'transition' : 'all 0.9s ease-in-out 0s'
 });
@@ -335,7 +335,7 @@ $('.imageContainer').animate({
 
 //--------------------------------------------------------------------------------
 
-//add a compoletion callback
+//add a completion callback
 
 $('.imageContainer').animate({
     'left' : '+=300px',
@@ -347,7 +347,7 @@ $('.imageContainer').animate({
 
 //--------------------------------------------------------------------------------
 
-//add a visual queue in the compoletion callback
+//add a visual queue in the completion callback
 
 var $imageContainer = $('.imageContainer');
 
