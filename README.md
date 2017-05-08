@@ -18,6 +18,7 @@ Repository for the [Gymnasium](http://thegymnasium.com) course.
 
 * git checkout part-1-start
 * npm install
+* bower install
 * gulp serve
 * [http://localhost:5000/](http://localhost:5000/)
 
@@ -25,6 +26,7 @@ Repository for the [Gymnasium](http://thegymnasium.com) course.
 
 * git checkout part-1-finish
 * npm install
+* bower install
 * gulp serve
 * [http://localhost:5000/](http://localhost:5000/)
 
